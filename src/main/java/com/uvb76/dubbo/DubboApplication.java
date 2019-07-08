@@ -10,16 +10,10 @@ import java.io.IOException;
 //@SpringBootApplication(exclude = {HibernateJpaAutoConfiguration.class})
 public class DubboApplication {
 
-    public static void main(String[] args) throws IOException {
-        //SpringApplication.run(DubboApplication.class, args);
+    public static void main(String[] args) throws Exception {
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"provider.xml"});
+        new Thread(new Server()).run();
 
-        context.start();
-
-        System.out.println("启动完成 ");
-
-        System.in.read();
     }
 
 }
